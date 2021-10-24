@@ -1,0 +1,29 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+name: todo-frontend_DEV_SERVER_CI_CD
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.DEV_SERVER_SSH_HOST }}
+        username: ${{ secrets.DEV_SERVER_SSH_USERNAME }}
+        port: ${{ secrets.DEV_SERVER_SSH_PORT }}
+        key: ${{ secrets.DEV_SERVER_SSH_KEY }}
+        source: "*"
+        target: "/var/www/html/todo-frontend"
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEV_SERVER_SSH_HOST }}
+        username: ${{ secrets.DEV_SERVER_SSH_USERNAME }}
+        port: ${{ secrets.DEV_SERVER_SSH_PORT }}
+        key: ${{ secrets.DEV_SERVER_SSH_KEY }}
+        script: sudo /var/www/html/start.sh
