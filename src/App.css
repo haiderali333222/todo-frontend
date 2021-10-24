@@ -1,0 +1,7 @@
+.todo-page {
+  padding: 5rem;
+  text-align: center;
+}
+.todos {
+  list-style-position: inside;
+}

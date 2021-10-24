@@ -1,0 +1,68 @@
+I, [2021-10-24T04:26:53.780429 #2144]  INFO -- : Registered expected interaction GET /todo
+D, [2021-10-24T04:26:53.780429 #2144] DEBUG -- : {
+  "description": "a GET request to create a todo",
+  "providerState": "provider allows todos creation",
+  "request": {
+    "method": "GET",
+    "path": "/todo",
+    "headers": {
+      "Accept": "application/json, text/plain, */*"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": [
+        {
+          "_id": "1",
+          "name": "Superman"
+        }
+      ]
+    }
+  }
+}
+I, [2021-10-24T04:26:53.858546 #2144]  INFO -- : Received request GET /todo
+D, [2021-10-24T04:26:53.858546 #2144] DEBUG -- : {
+  "path": "/todo",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/16.7.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Accept-Encoding": "gzip, deflate",
+    "Host": "localhost:8080",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-10-24T04:26:53.858546 #2144]  INFO -- : Found matching response for GET /todo
+D, [2021-10-24T04:26:53.858546 #2144] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": [
+      {
+        "_id": "1",
+        "name": "Superman"
+      }
+    ]
+  }
+}
+I, [2021-10-24T04:26:53.938121 #2144]  INFO -- : Verifying - interactions matched
+I, [2021-10-24T04:26:53.953843 #2144]  INFO -- : Cleared interactions
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : Updating pact for todo-backend at C:/backend/todo-frontend/todo-frontend/pacts/todo-frontend-todo-backend.json
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : *****************************************************************************
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : Updating existing file .C:/backend/todo-frontend/todo-frontend/pacts/todo-frontend-todo-backend.json as pactfile_write_mode is :update
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : Only interactions defined in this test run will be updated.
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
+I, [2021-10-24T04:26:53.969524 #2144]  INFO -- : *****************************************************************************
